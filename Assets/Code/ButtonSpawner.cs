@@ -18,17 +18,17 @@ public class ButtonSpawner : MonoBehaviour
 
     [SerializeField] float movementSpeed = 0.4f;
 
-    BaseManager baseManager;
+    PlayerBase playerBase;
 
     private void Start()
     {
-        baseManager = GameObject.FindAnyObjectByType<BaseManager>();
+        playerBase = GameObject.FindAnyObjectByType<PlayerBase>();
     }
     private void OnMouseDown()
     {
-        if (baseManager.reasource >= resourceCost)
+        if (playerBase.reasource >= resourceCost)
         {
-            baseManager.reasource -= resourceCost;
+            playerBase.reasource -= resourceCost;
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNum + ")");
             BaseSprite instance = Instantiate(enemyType, firstNode.transform.position, Quaternion.identity);
 

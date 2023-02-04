@@ -13,12 +13,6 @@ public class BaseSprite : MonoBehaviour
     protected GameObject targetNode;
     protected int LastNode = 0;
 
-    protected BaseManager baseManager;
-    private void Start()
-    {
-        baseManager = GameObject.FindAnyObjectByType<BaseManager>();
-    }
-
     public void setVariables(int initHealth, int initDamage, float initMovSpeed, 
         int initCurrNode, GameObject initTargNode, int initLastNode)
     {

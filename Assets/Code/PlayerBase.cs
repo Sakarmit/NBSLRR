@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseManager : MonoBehaviour
+public class PlayerBase : MonoBehaviour
 {
     [SerializeField] public int playerBaseHealth = 50;
-    [SerializeField] public int enemyBaseHealth = 100;
 
     [SerializeField] public float reasource = 10;
     [SerializeField] public float reasourceRate;
@@ -18,11 +17,6 @@ public class BaseManager : MonoBehaviour
         {
             Debug.Log("***Implement Game Over Here***");
         } 
-
-        if (enemyBaseHealth <= 0)
-        {
-            Debug.Log("***Implement Win Here***");
-        }
     }
 
     private void FixedUpdate()
