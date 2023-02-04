@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    protected Transform myTransform;
-
     //Fields used to move Camera
 
     [SerializeField] private float timeToMoveCamera;
@@ -19,7 +17,7 @@ public class MainCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myTransform = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -27,22 +25,19 @@ public class MainCamera : MonoBehaviour
     {
         if (moveCamera)
         {
-            if(cameraMoveProgress >= timeToMoveCamera)
+            cameraMoveProgress += Time.deltaTime;
+            cameraXMovementProgress = cameraMoveProgress * (CameraFrom.x - CameraTo.x) / timeToMoveCamera;
+            cameraYMovementProgress = cameraMoveProgress * (CameraFrom.y - CameraTo.y) / timeToMoveCamera;
+            transform.position = new Vector3(CameraFrom.x - cameraXMovementProgress, CameraFrom.y - cameraYMovementProgress, transform.position.z);
+            if (cameraMoveProgress >= timeToMoveCamera)
             {
                 moveCamera = false;
-            }
-            else
-            {
-                cameraMoveProgress += Time.deltaTime;
-                cameraXMovementProgress = cameraMoveProgress * (CameraFrom.x - CameraTo.x) / timeToMoveCamera;
-                cameraYMovementProgress = cameraMoveProgress * (CameraFrom.y - CameraTo.y) / timeToMoveCamera;
-                myTransform.position = new Vector3(CameraFrom.x - cameraXMovementProgress, CameraFrom.y - cameraYMovementProgress, myTransform.position.z);
             }
         }
     }
 
     //Only for 2D
-    void CameraSmoothMove2D(Vector2 CFrom, Vector2 CTo)
+    public void CameraSmoothMove2D(Vector2 CFrom, Vector2 CTo)
     {
         CameraFrom = CFrom;
         CameraTo = CTo;
