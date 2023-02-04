@@ -30,7 +30,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("BadSprites").Length < maxEnemyCount)
         {
-            int randomPath = Random.Range(0, 7);
+            int randomPath = Random.Range(0, 4);
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNums[randomPath] + ")");
             BaseSprite instance = Instantiate(enemyType, firstNode.transform.position, Quaternion.identity);
 
