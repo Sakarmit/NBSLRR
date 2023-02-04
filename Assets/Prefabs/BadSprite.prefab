@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9113367435353603441}
   - component: {fileID: 9113367435353603442}
   - component: {fileID: 9113367435353603447}
-  - component: {fileID: 814175718783866549}
+  - component: {fileID: 4781718738938488402}
   m_Layer: 0
   m_Name: BadSprite
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &814175718783866549
+--- !u!114 &4781718738938488402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9113367435353603443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c8a66652ae64b4fb2d080f8e9ac91b, type: 3}
+  m_Script: {fileID: 11500000, guid: ea981380363f99c42bb11fdfd73178c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  node: 99
