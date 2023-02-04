@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class BaseSprite : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int health;
+    public int damage;
 
-    // Update is called once per frame
-    void Update()
+    protected float movementSpeed;
+
+    protected int currentNode = 0;
+    protected GameObject targetNode;
+    protected int LastNode = 0;
+
+    public void setVariables(int initHealth, int initDamage, float initMovSpeed, 
+        int initCurrNode, GameObject initTargNode, int initLastNode)
     {
-        
+        health = initHealth;
+        damage = initDamage;
+        movementSpeed = initMovSpeed;
+        currentNode = initCurrNode;
+        targetNode = initTargNode;
+        LastNode = initLastNode;
     }
 }

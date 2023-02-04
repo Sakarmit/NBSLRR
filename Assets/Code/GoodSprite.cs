@@ -4,35 +4,23 @@ using UnityEngine;
 
 public class GoodSprite : BaseSprite
 {
-    public int health = 15;
-    public int damage = 5;
-
-    [SerializeField] private float node = 0;
-    [SerializeField] private float LastNode = 0;
-    private GameObject targetNode;
-
-    private float movementSpeed = 1f;
-
-    private void Start()
-    {
-        targetNode = GameObject.Find("PathNode (" + node + ")");
-    }
     private void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetNode.transform.position, Time.deltaTime * movementSpeed);
         if (transform.position == targetNode.transform.position)
         {
-            if (node == LastNode)
+            if (currentNode == LastNode)
             {
                 Destroy(gameObject);
                 Debug.LogWarning("***Insert Ememy Base Damage Here***");
             }
-            targetNode = GameObject.Find("PathNode (" + ++node + ")");
+            targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //If this collided with Enemy calculates which loses health and which dies
         if (collision.gameObject.tag.Equals("BadSprites"))
         {
             int enemyHealth = collision.gameObject.GetComponent<BadSprite>().health;
