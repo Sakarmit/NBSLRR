@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GoodSprite : BaseSprite
 {
+    protected EnemyBase enemyBase;
+    private void Start()
+    {
+        enemyBase = GameObject.FindAnyObjectByType<EnemyBase>();
+    }
     private void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetNode.transform.position, Time.deltaTime * movementSpeed);
@@ -11,7 +16,7 @@ public class GoodSprite : BaseSprite
         {
             if (currentNode == LastNode)
             {
-                baseManager.enemyBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
+                enemyBase.enemyBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
                 Destroy(gameObject);
             }
             targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
