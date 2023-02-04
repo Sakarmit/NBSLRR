@@ -11,8 +11,8 @@ public class GoodSprite : BaseSprite
         {
             if (currentNode == LastNode)
             {
+                baseManager.enemyBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
                 Destroy(gameObject);
-                Debug.LogWarning("***Insert Ememy Base Damage Here***");
             }
             targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
         }
