@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class BadSprite : BaseSprite
 {
+    public int health = 10;
+    public int damage = 5;
+
     [SerializeField] private float node = 99f;
     private GameObject targetNode;
 
