@@ -12,8 +12,8 @@ public class BadSprite : BaseSprite
         {
             if (currentNode == LastNode)
             {
+                baseManager.playerBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
                 Destroy(gameObject);
-                Debug.LogWarning("***Insert Player Base Damage Here***");
             }
             targetNode = GameObject.Find("PathNode (" + --currentNode + ")");
         }

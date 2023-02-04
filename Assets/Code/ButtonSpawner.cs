@@ -4,8 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Spawner : MonoBehaviour
+public class ButtonSpawner : MonoBehaviour
 {
+    [SerializeField] int resourceCost = 1;
+
     [SerializeField] private int spawnNodeNum;
     [SerializeField] private int endNodeNum;
 
@@ -16,11 +18,17 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] float movementSpeed = 0.4f;
 
+    BaseManager baseManager;
+
+    private void Start()
+    {
+        baseManager = GameObject.FindAnyObjectByType<BaseManager>();
+    }
     private void OnMouseDown()
     {
-        Debug.LogWarning("***Implement Resource System For Spawning***");
-        if (true)
+        if (baseManager.reasource >= resourceCost)
         {
+            baseManager.reasource -= resourceCost;
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNum + ")");
             BaseSprite instance = Instantiate(enemyType, firstNode.transform.position, Quaternion.identity);
 
