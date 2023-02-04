@@ -5,7 +5,6 @@ using UnityEngine;
 public class GuiController : MonoBehaviour
 {
     [SerializeField] public Camera MainCamera;
-    [SerializeField] public AudioSource buttonSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +24,12 @@ public class GuiController : MonoBehaviour
 
     public void PlayButtonSound()
     {
-        buttonSound.Play();
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void ExitGame()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }

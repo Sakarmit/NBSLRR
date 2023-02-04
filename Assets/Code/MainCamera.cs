@@ -32,6 +32,7 @@ public class MainCamera : MonoBehaviour
             if (cameraMoveProgress >= timeToMoveCamera)
             {
                 moveCamera = false;
+                transform.position = new Vector3(CameraTo.x, CameraTo.y, transform.position.z);
             }
         }
     }
