@@ -208,6 +208,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 370782859}
         m_TargetAssemblyTypeName: GuiController, Assembly-CSharp
+        m_MethodName: resetEndScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 370782859}
+        m_TargetAssemblyTypeName: GuiController, Assembly-CSharp
         m_MethodName: PanCameraDown
         m_Mode: 1
         m_Arguments:
@@ -221,6 +233,18 @@ MonoBehaviour:
       - m_Target: {fileID: 370782859}
         m_TargetAssemblyTypeName: GuiController, Assembly-CSharp
         m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 370782859}
+        m_TargetAssemblyTypeName: GuiController, Assembly-CSharp
+        m_MethodName: enableGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -312,6 +336,7 @@ MonoBehaviour:
   startSpeed: 0.4
   movementSpeed: 0.4
   maxEnemyCount: 10
+  spawnSpeed: 0
 --- !u!212 &202205287
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1217,7 +1242,7 @@ MonoBehaviour:
   spawnNodeNum: 0
   endNodeNum: 2
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  spawnHealth: 5
+  spawnHealth: 2
   spawnDamage: 1
   movementSpeed: 0.3
   playerBase: {fileID: 1254746662}
@@ -2708,7 +2733,7 @@ MonoBehaviour:
   spawnNodeNum: 20
   endNodeNum: 22
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  spawnHealth: 5
+  spawnHealth: 2
   spawnDamage: 1
   movementSpeed: 0.3
   playerBase: {fileID: 1254746662}
@@ -2987,11 +3012,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc99bea025e5fb4eb7bc386f6e66bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 50
-  playerBaseHealth: 50
+  startingHealth: 9999
+  playerBaseHealth: 10
   playerHealthDisplay: {fileID: 343883954}
   resourceDisplay: {fileID: 1261122404}
-  sunResource: 0
+  sunResource: 10
   startingSunRate: 1
   resourceRate: 0
   GameUI: {fileID: 943361228}
@@ -3265,7 +3290,7 @@ MonoBehaviour:
   spawnNodeNum: 40
   endNodeNum: 42
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  spawnHealth: 5
+  spawnHealth: 2
   spawnDamage: 1
   movementSpeed: 0.3
   playerBase: {fileID: 1254746662}
@@ -3754,7 +3779,7 @@ MonoBehaviour:
   spawnNodeNum: 10
   endNodeNum: 12
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  spawnHealth: 5
+  spawnHealth: 2
   spawnDamage: 1
   movementSpeed: 0.3
   playerBase: {fileID: 1254746662}
@@ -4843,7 +4868,7 @@ MonoBehaviour:
   spawnNodeNum: 30
   endNodeNum: 33
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  spawnHealth: 5
+  spawnHealth: 2
   spawnDamage: 1
   movementSpeed: 0.3
   playerBase: {fileID: 1254746662}
