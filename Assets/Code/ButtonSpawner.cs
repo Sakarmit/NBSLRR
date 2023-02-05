@@ -26,9 +26,9 @@ public class ButtonSpawner : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (playerBase.reasource >= resourceCost)
+        if (EnemyBase.gameStart && !EnemyBase.gameEnd && playerBase.resource >= resourceCost)
         {
-            playerBase.reasource -= resourceCost;
+            playerBase.resource -= resourceCost;
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNum + ")");
             BaseSprite instance = Instantiate(spriteType, firstNode.transform.position, Quaternion.identity);
 

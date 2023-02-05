@@ -6,8 +6,8 @@ public class PlayerBase : MonoBehaviour
 {
     [SerializeField] public int playerBaseHealth = 50;
 
-    [SerializeField] public float reasource = 10;
-    [SerializeField] public float reasourceRate;
+    [SerializeField] public float resource = 10;
+    [SerializeField] public float resourceRate;
 
     //Counts how many loops of fixed update happened
     private int fixedUpdateCounter = 0;
@@ -23,7 +23,7 @@ public class PlayerBase : MonoBehaviour
     {
         if (fixedUpdateCounter == 60)
         {
-            reasource += reasourceRate;
+            resource += resourceRate;
             fixedUpdateCounter = 0;
         }
         else

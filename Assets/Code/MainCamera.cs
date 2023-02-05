@@ -33,6 +33,7 @@ public class MainCamera : MonoBehaviour
             {
                 moveCamera = false;
                 transform.position = new Vector3(CameraTo.x, CameraTo.y, transform.position.z);
+                EnemyBase.gameStart = true;
             }
         }
     }
@@ -42,9 +43,9 @@ public class MainCamera : MonoBehaviour
     {
         CameraFrom = CFrom;
         CameraTo = CTo;
-        moveCamera = true;
         cameraXMovementProgress = 0;
         cameraYMovementProgress = 0;
         cameraMoveProgress = 0;
+        moveCamera = true;
     }
 }
