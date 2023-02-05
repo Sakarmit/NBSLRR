@@ -18,6 +18,7 @@ public class GuiController : MonoBehaviour
     [SerializeField] GameObject enemyBase;
     [SerializeField] GameObject spawners;
     [SerializeField] GameObject resourceUpgrade;
+    [SerializeField] GameObject upgradeButton;
 
     [SerializeField] private GameObject ExitButton;
 
@@ -44,6 +45,8 @@ public class GuiController : MonoBehaviour
                 spawners.transform.GetChild(index).SendMessage("SetDefaults");
             }
             resourceUpgrade.SendMessage("SetDefaults");
+            upgradeButton.SendMessage("Start");
+
             gameEnable = false;
         }
 
