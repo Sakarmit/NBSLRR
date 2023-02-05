@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -13,10 +14,16 @@ public class GuiController : MonoBehaviour
     private float EndScreenXMovementProgress;
     private float EndScreenMoveProgress;
 
+    [SerializeField] GameObject playerBase;
+    [SerializeField] GameObject enemyBase;
+    [SerializeField] GameObject spawners;
+
+    [SerializeField] private GameObject ExitButton;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -45,14 +52,32 @@ public class GuiController : MonoBehaviour
         GetComponent<AudioSource>().Play();
     }
 
+    public void enableGame()
+    {
+        playerBase.SetActive(true);
+        enemyBase.SetActive(true);
+        spawners.SetActive(true);
+
+        playerBase.SendMessage("SetDefaults");
+        enemyBase.SendMessage("SetDefaults");
+    }
+
     public void ExitGame()
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
-    public void SlideInEndScreen()
+    public void SlideInEndScreen(string text)
     {
+        if (this.name.Equals("GameUI"))
+        {
+            transform.Find("EndScreen").transform.Find("EndText").GetComponent<TextMeshProUGUI>().text = text;
+        }
+        playerBase.SetActive(false);
+        enemyBase.SetActive(false);
+        spawners.SetActive(false);
+        ExitButton.SetActive(true);
         EndScreenXMovementProgress = 0;
         EndScreenMoveProgress = 0;
         EndScreen.transform.position = new Vector3(-1, 0, 0);

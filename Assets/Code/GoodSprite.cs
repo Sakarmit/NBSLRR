@@ -11,18 +11,15 @@ public class GoodSprite : BaseSprite
     }
     private void FixedUpdate()
     {
-        if (!EnemyBase.gameEnd)
+        transform.position = Vector2.MoveTowards(transform.position, targetNode.transform.position, Time.deltaTime * movementSpeed);
+        if (transform.position == targetNode.transform.position)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetNode.transform.position, Time.deltaTime * movementSpeed);
-            if (transform.position == targetNode.transform.position)
+            if (currentNode == LastNode)
             {
-                if (currentNode == LastNode)
-                {
-                    enemyBase.enemyBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
-                    Destroy(gameObject);
-                }
-                targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
+                enemyBase.enemyBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
+                Destroy(gameObject);
             }
+            targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
         }
     }
 

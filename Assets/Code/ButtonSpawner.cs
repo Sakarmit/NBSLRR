@@ -18,15 +18,11 @@ public class ButtonSpawner : MonoBehaviour
 
     [SerializeField] float movementSpeed = 0.4f;
 
-    PlayerBase playerBase;
+    [SerializeField] PlayerBase playerBase;
 
-    private void Start()
-    {
-        playerBase = GameObject.FindAnyObjectByType<PlayerBase>();
-    }
     private void OnMouseDown()
     {
-        if (!EnemyBase.gameEnd && playerBase.sunResource >= resourceCost)
+        if (playerBase.sunResource >= resourceCost)
         {
             GetComponent<ButtonController>().PlayButtonSound();
             playerBase.sunResource -= resourceCost;
