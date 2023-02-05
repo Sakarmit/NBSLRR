@@ -28,6 +28,7 @@ public class ButtonSpawner : MonoBehaviour
     {
         if (EnemyBase.gameStart && !EnemyBase.gameEnd && playerBase.resource >= resourceCost)
         {
+            GetComponent<ButtonController>().PlayButtonSound();
             playerBase.resource -= resourceCost;
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNum + ")");
             BaseSprite instance = Instantiate(spriteType, firstNode.transform.position, Quaternion.identity);

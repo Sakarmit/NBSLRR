@@ -6,7 +6,7 @@ using UnityEngine;
 public class GuiController : MonoBehaviour
 {
     [SerializeField] public Camera MainCamera;
-    [SerializeField] public SpriteRenderer EndScreen;
+    [SerializeField] public GameObject EndScreen;
 
     [SerializeField] private float timeToMoveEndScreen;
     private bool moveEndScreen = false;
@@ -25,19 +25,19 @@ public class GuiController : MonoBehaviour
         if (moveEndScreen)
         {
             EndScreenMoveProgress += Time.deltaTime;
-            EndScreenXMovementProgress = EndScreenMoveProgress * -600 / timeToMoveEndScreen;
-            transform.position = new Vector3(-600 - EndScreenXMovementProgress, 0, 0);
+            EndScreenXMovementProgress = EndScreenMoveProgress * -1 / timeToMoveEndScreen;
+            EndScreen.transform.position = new Vector3(-1 - EndScreenXMovementProgress, 0, 0);
             if (EndScreenMoveProgress >= timeToMoveEndScreen)
             {
                 moveEndScreen = false;
-                transform.position = new Vector3(0, 0, 0);
+                EndScreen.transform.position = new Vector3(0, 0, 0);
             }
         }
     }
 
     public void PanCameraDown()
     {
-        MainCamera.GetComponent<MainCamera>().CameraSmoothMove2D(new Vector2(0, 6.72f), new Vector2(0, 0));
+        MainCamera.GetComponent<MainCamera>().CameraSmoothMove2D(new Vector2(0, 6.72f), new Vector2(0, 0),1);
     }
 
     public void PlayButtonSound()
@@ -53,8 +53,9 @@ public class GuiController : MonoBehaviour
 
     public void SlideInEndScreen()
     {
-        moveEndScreen = true;
         EndScreenXMovementProgress = 0;
         EndScreenMoveProgress = 0;
+        EndScreen.transform.position = new Vector3(-1, 0, 0);
+        moveEndScreen = true;
     }
 }

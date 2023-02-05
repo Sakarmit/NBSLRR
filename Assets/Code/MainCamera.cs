@@ -6,7 +6,7 @@ public class MainCamera : MonoBehaviour
 {
     //Fields used to move Camera
 
-    [SerializeField] private float timeToMoveCamera;
+    private float timeToMoveCamera;
     private bool moveCamera = false;
     private Vector2 CameraFrom;
     private Vector2 CameraTo;
@@ -39,8 +39,9 @@ public class MainCamera : MonoBehaviour
     }
 
     //Only for 2D
-    public void CameraSmoothMove2D(Vector2 CFrom, Vector2 CTo)
+    public void CameraSmoothMove2D(Vector2 CFrom, Vector2 CTo, float timeToMove)
     {
+        timeToMoveCamera = timeToMove;
         CameraFrom = CFrom;
         CameraTo = CTo;
         cameraXMovementProgress = 0;

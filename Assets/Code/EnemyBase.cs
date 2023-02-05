@@ -21,13 +21,16 @@ public class EnemyBase : MonoBehaviour
 
     public static bool gameStart = false;
     public static bool gameEnd = false;
+
+    [SerializeField] private GameObject ExitButton;
     // Update is called once per frame
     void Update()
     {
-        if (enemyBaseHealth <= 0)
+        if (enemyBaseHealth <= 0 && !gameEnd)
         {
             gameEnd = true;
             GameUI.GetComponent<GuiController>().SlideInEndScreen();
+            ExitButton.SetActive(true);
         }
     }
 
