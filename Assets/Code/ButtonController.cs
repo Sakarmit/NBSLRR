@@ -11,6 +11,6 @@ public class ButtonController : MonoBehaviour
     }
     public void MoveCameraToTop()
     {
-        MainCamera.GetComponent<MainCamera>().CameraSmoothMove2D(new Vector2(0, 0), new Vector2(0, 6.72f),5);
+        MainCamera.GetComponent<MainCamera>().CameraSmoothMove2D(new Vector2(0, 0), new Vector2(0, 6.72f),10);
     }
 }
