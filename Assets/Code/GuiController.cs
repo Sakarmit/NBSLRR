@@ -20,6 +20,8 @@ public class GuiController : MonoBehaviour
 
     [SerializeField] private GameObject ExitButton;
 
+    bool gameEnable = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,17 @@ public class GuiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameEnable && MainCamera.transform.position.y == 0)
+        {
+            playerBase.SetActive(true);
+            enemyBase.SetActive(true);
+            spawners.SetActive(true);
+
+            playerBase.SendMessage("SetDefaults");
+            enemyBase.SendMessage("SetDefaults");
+            gameEnable = false;
+        }
+
         if (moveEndScreen)
         {
             EndScreenMoveProgress += Time.deltaTime;
@@ -39,11 +52,6 @@ public class GuiController : MonoBehaviour
                 moveEndScreen = false;
                 EndScreen.transform.position = new Vector3(0, 0, 0);
             }
-        }
-
-        if (!playerBase.activeSelf && MainCamera.transform.position.y == 0)
-        {
-            enableGame();
         }
     }
 
@@ -59,13 +67,7 @@ public class GuiController : MonoBehaviour
 
     public void enableGame()
     {
-        playerBase.SetActive(true);
-        enemyBase.SetActive(true);
-        spawners.SetActive(true);
-
-        playerBase.SendMessage("SetDefaults");
-        enemyBase.SendMessage("SetDefaults");
-        resetEndScreen();
+        gameEnable = true;
     }
 
     public void ExitGame()
