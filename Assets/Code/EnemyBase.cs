@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
     [SerializeField] public int enemyBaseHealth = 100;
+    [SerializeField] private TextMeshProUGUI enemyHealthDisplay;
 
     [SerializeField] private int[] spawnNodeNums;
     [SerializeField] private int[] endNodeNums;
@@ -19,7 +21,6 @@ public class EnemyBase : MonoBehaviour
 
     [SerializeField] int maxEnemyCount = 14;
 
-    public static bool gameStart = false;
     public static bool gameEnd = false;
 
     [SerializeField] private GameObject ExitButton;
@@ -36,7 +37,7 @@ public class EnemyBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gameStart && !gameEnd && GameObject.FindGameObjectsWithTag("BadSprites").Length < maxEnemyCount)
+        if (!gameEnd && GameObject.FindGameObjectsWithTag("BadSprites").Length < maxEnemyCount)
         {
             int randomPath = Random.Range(0, 4);
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNums[randomPath] + ")");
@@ -45,5 +46,6 @@ public class EnemyBase : MonoBehaviour
             instance.setVariables(spawnHealth, spawnDamage, movementSpeed, 
                 spawnNodeNums[randomPath], firstNode, endNodeNums[randomPath]);
         }
+        enemyHealthDisplay.text = enemyBaseHealth.ToString("0000.#");
     }
 }

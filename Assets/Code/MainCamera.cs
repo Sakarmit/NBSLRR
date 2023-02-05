@@ -33,7 +33,8 @@ public class MainCamera : MonoBehaviour
             {
                 moveCamera = false;
                 transform.position = new Vector3(CameraTo.x, CameraTo.y, transform.position.z);
-                EnemyBase.gameStart = true;
+                GameObject.FindAnyObjectByType<PlayerBase>().enabled = true;
+                GameObject.FindAnyObjectByType<EnemyBase>().enabled = true;
             }
         }
     }
