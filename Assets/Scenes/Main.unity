@@ -465,14 +465,14 @@ MonoBehaviour:
   enemyType: {fileID: 4781718738938488402, guid: 14dc12fa11d052e458df2b7969ad77b9, type: 3}
   GameUI: {fileID: 943361228}
   startEnemyHealth: 1
-  spawnHealth: 1
+  spawnHealth: 2
   startEnemyDamage: 1
   spawnDamage: 1
   startSpeed: 0.2
   movementSpeed: 0.5
   maxEnemyCount: 20
   spawnSpeed: 0
-  startHealthRate: 0
+  startHealthRate: 0.001
 --- !u!212 &202205287
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1480,8 +1480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ee5ba7bef5c3e40a1eebe447349a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startUpgradeCost: 0
-  startCostScaler: 0
+  startUpgradeCost: 5
+  startCostScaler: 2
   playerBase: {fileID: 1254746662}
 --- !u!82 &521051262
 AudioSource:
@@ -3614,8 +3614,8 @@ MonoBehaviour:
   spawnNodeNum: 20
   endNodeNum: 22
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  startingHealth: 0
-  startingDamage: 0
+  startingHealth: 2
+  startingDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -4257,8 +4257,8 @@ MonoBehaviour:
   spawnNodeNum: 40
   endNodeNum: 42
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  startingHealth: 0
-  startingDamage: 0
+  startingHealth: 2
+  startingDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -5018,8 +5018,8 @@ MonoBehaviour:
   spawnNodeNum: 10
   endNodeNum: 12
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  startingHealth: 0
-  startingDamage: 0
+  startingHealth: 2
+  startingDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -6412,8 +6412,8 @@ MonoBehaviour:
   spawnNodeNum: 30
   endNodeNum: 33
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  startingHealth: 0
-  startingDamage: 0
+  startingHealth: 2
+  startingDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
