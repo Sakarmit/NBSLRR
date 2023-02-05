@@ -350,7 +350,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Key 1 to 5 To Spawn
+  m_text: 'Press Key 1 to 5 To Spawn
+
+    Space to Upgrade'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -413,7 +415,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -139.43588, y: 0, z: -141.8149, w: 0}
+  m_margin: {x: -139.43588, y: 0, z: -141.8149, w: -18.181374}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2645,10 +2647,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.3841962
     y: 0
-    width: 1
-    height: 1
+    width: 0.23067097
+    height: 0.9988938
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

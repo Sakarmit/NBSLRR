@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ResourceUpgrade : MonoBehaviour
@@ -9,6 +10,14 @@ public class ResourceUpgrade : MonoBehaviour
     [SerializeField] int startCostScaler;
     int costScaler;
     [SerializeField] PlayerBase playerBase;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnMouseDown();
+        }
+    }
     private void OnMouseDown()
     {
         if (playerBase.sunResource >= upgradeCost)
@@ -19,7 +28,6 @@ public class ResourceUpgrade : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
     }
-
     public void SetDefaults()
     {
         upgradeCost = startUpgradeCost;

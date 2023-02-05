@@ -16,7 +16,7 @@ public class GoodSprite : BaseSprite
         {
             if (currentNode == LastNode)
             {
-                enemyBase.enemyBaseHealth -= (int)(this.damage * Mathf.CeilToInt(this.health / this.damage));
+                enemyBase.enemyBaseHealth = Mathf.Clamp((int)(this.damage * Mathf.CeilToInt(this.health / this.damage)), 0, 9999);
                 Destroy(gameObject);
             }
             targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
