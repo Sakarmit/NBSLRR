@@ -60,6 +60,7 @@ public class GuiController : MonoBehaviour
 
         playerBase.SendMessage("SetDefaults");
         enemyBase.SendMessage("SetDefaults");
+        resetEndScreen();
     }
 
     public void ExitGame()
@@ -82,5 +83,12 @@ public class GuiController : MonoBehaviour
         EndScreenMoveProgress = 0;
         EndScreen.transform.position = new Vector3(-1, 0, 0);
         moveEndScreen = true;
+    }
+
+    public void resetEndScreen()
+    {
+        EndScreenXMovementProgress = 0;
+        EndScreenMoveProgress = 0;
+        EndScreen.transform.position = new Vector3(-1.5f, 0, 0);
     }
 }

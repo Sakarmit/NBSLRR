@@ -39,6 +39,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (enemyBaseHealth <= 0)
         {
+            enemyHealthDisplay.text = enemyBaseHealth.ToString("0000.#");
             GameUI.GetComponent<GuiController>().SlideInEndScreen("You Win!");
         }
     }

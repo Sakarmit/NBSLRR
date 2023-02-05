@@ -26,6 +26,7 @@ public class PlayerBase : MonoBehaviour
     {
         if (playerBaseHealth <= 0)
         {
+            playerHealthDisplay.text = playerBaseHealth.ToString("0000.#");
             GameUI.GetComponent<GuiController>().SlideInEndScreen("You Lose");
         }
     }
