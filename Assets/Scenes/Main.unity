@@ -385,7 +385,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1485,6 +1485,7 @@ MonoBehaviour:
   startUpgradeCost: 5
   startCostScaler: 2
   playerBase: {fileID: 1254746662}
+  text: {fileID: 1723102453}
 --- !u!82 &521051262
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1699,7 +1700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -428.19}
+  m_AnchoredPosition: {x: 2.5449991, y: 12.809982}
   m_SizeDelta: {x: 75.81, y: 19.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599385298
@@ -5390,7 +5391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53.545, y: -400}
+  m_AnchoredPosition: {x: -51, y: 41}
   m_SizeDelta: {x: 182.9, y: 37.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1769940468
