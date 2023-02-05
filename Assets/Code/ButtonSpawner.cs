@@ -20,6 +20,18 @@ public class ButtonSpawner : MonoBehaviour
 
     [SerializeField] PlayerBase playerBase;
 
+    string inputKey;
+    private void Start()
+    {
+        inputKey = (1 + (spawnNodeNum / 10)).ToString();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(inputKey))
+        {
+            this.OnMouseDown();
+        }
+    }
     private void OnMouseDown()
     {
         if (playerBase.sunResource >= resourceCost)
