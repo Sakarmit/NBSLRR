@@ -20,7 +20,7 @@ public class ResourceUpgrade : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (playerBase.sunResource >= upgradeCost)
+        if (playerBase.gameObject.activeSelf && playerBase.sunResource >= upgradeCost)
         {
             playerBase.sunResource -= upgradeCost;
             playerBase.resourceRate++;
