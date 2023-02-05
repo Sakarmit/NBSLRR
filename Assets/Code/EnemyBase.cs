@@ -27,7 +27,8 @@ public class EnemyBase : MonoBehaviour
 
     [SerializeField] int maxEnemyCount = 14;
     [SerializeField] int spawnSpeed;
-    [SerializeField] float HealthIncreaseRate;
+    [SerializeField] float startHealthRate;
+    float HealthIncreaseRate;
 
     int spawnCooldown = 0;
     private void Start()
@@ -36,6 +37,7 @@ public class EnemyBase : MonoBehaviour
         spawnHealth = startEnemyHealth;
         spawnDamage = startEnemyDamage;
         movementSpeed = startSpeed;
+        HealthIncreaseRate = startHealthRate;
     }
     // Update is called once per frame
     void Update()
@@ -73,5 +75,6 @@ public class EnemyBase : MonoBehaviour
         spawnHealth = startEnemyHealth;
         spawnDamage = startEnemyDamage;
         movementSpeed = startSpeed;
+        HealthIncreaseRate = startHealthRate;
     }
 }

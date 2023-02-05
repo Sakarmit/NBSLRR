@@ -13,8 +13,10 @@ public class ButtonSpawner : MonoBehaviour
 
     [SerializeField] private BaseSprite spriteType;
 
-    [SerializeField] float spawnHealth = 1;
-    [SerializeField] float spawnDamage = 1;
+    [SerializeField] float startingHealth;
+    float spawnHealth = 1;
+    [SerializeField] float startingDamage;
+    float spawnDamage = 1;
 
     [SerializeField] float movementSpeed = 0.4f;
 
@@ -26,6 +28,8 @@ public class ButtonSpawner : MonoBehaviour
     string inputKey;
     private void Start()
     {
+        spawnHealth = startingHealth; ;
+        spawnDamage = startingDamage;
         inputKey = (1 + (spawnNodeNum / 10)).ToString();
     }
     private void Update()
@@ -48,5 +52,11 @@ public class ButtonSpawner : MonoBehaviour
 
             instance.setVariables(spawnHealth, spawnDamage, movementSpeed, spawnNodeNum, firstNode, endNodeNum);
         }
+    }
+
+    private void SetDefaults()
+    {
+        spawnDamage = startingDamage;
+        spawnHealth = startingHealth;
     }
 }

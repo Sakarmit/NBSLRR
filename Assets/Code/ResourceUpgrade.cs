@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ResourceUpgrade : MonoBehaviour
 {
-    [SerializeField] int upgradeCost;
-    [SerializeField] int costScaler;
+    [SerializeField] int startUpgradeCost;
+    int upgradeCost;
+    [SerializeField] int startCostScaler;
+    int costScaler;
     [SerializeField] PlayerBase playerBase;
     private void OnMouseDown()
     {
@@ -16,5 +18,11 @@ public class ResourceUpgrade : MonoBehaviour
             upgradeCost *= costScaler;
             GetComponent<AudioSource>().Play();
         }
+    }
+
+    public void SetDefaults()
+    {
+        upgradeCost = startUpgradeCost;
+        costScaler = startCostScaler;
     }
 }
