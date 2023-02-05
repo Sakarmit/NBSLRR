@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ResourceUpgrade : MonoBehaviour
 {
-    [SerializeField] float upgradeCost;
-    [SerializeField] float costScaler;
+    [SerializeField] int upgradeCost;
+    [SerializeField] int costScaler;
     [SerializeField] PlayerBase playerBase;
     private void OnMouseDown()
     {
         if (playerBase.sunResource >= upgradeCost)
         {
+            playerBase.sunResource -= upgradeCost;
             playerBase.resourceRate++;
             upgradeCost *= costScaler;
+            GetComponent<AudioSource>().Play();
         }
     }
 }

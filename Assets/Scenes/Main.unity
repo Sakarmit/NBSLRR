@@ -1457,12 +1457,11 @@ GameObject:
   m_Component:
   - component: {fileID: 521051266}
   - component: {fileID: 521051265}
-  - component: {fileID: 521051264}
   - component: {fileID: 521051263}
   - component: {fileID: 521051262}
   - component: {fileID: 521051261}
   m_Layer: 0
-  m_Name: Upgrade
+  m_Name: UpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1481,7 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeCost: 10
-  costScaler: 2
+  costScaler: 1
   playerBase: {fileID: 1254746662}
 --- !u!82 &521051262
 AudioSource:
@@ -1595,26 +1594,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.08, y: 0.16}
   m_Direction: 0
---- !u!114 &521051264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521051260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab771499438920e4f89ca43962ae02e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resourceCost: 1
-  spawnNodeNum: 20
-  endNodeNum: 22
-  spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
-  spawnHealth: 2
-  spawnDamage: 1
-  movementSpeed: 0.5
-  playerBase: {fileID: 1254746662}
 --- !u!212 &521051265
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1675,12 +1654,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521051260}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.02, y: 0.995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: -8, y: 398, z: 0}
+  m_LocalScale: {x: 400, y: 400, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 943361232}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &599385296
 GameObject:
@@ -1923,7 +1902,7 @@ MonoBehaviour:
   endNodeNum: 2
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 2
+  spawnDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -3193,6 +3172,7 @@ RectTransform:
   - {fileID: 1697086933}
   - {fileID: 599385297}
   - {fileID: 140438407}
+  - {fileID: 521051266}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3632,7 +3612,7 @@ MonoBehaviour:
   endNodeNum: 22
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 2
+  spawnDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -4274,7 +4254,7 @@ MonoBehaviour:
   endNodeNum: 42
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 2
+  spawnDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -5034,7 +5014,7 @@ MonoBehaviour:
   endNodeNum: 12
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 2
+  spawnDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3
@@ -6427,7 +6407,7 @@ MonoBehaviour:
   endNodeNum: 33
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 2
+  spawnDamage: 4
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
   DamageIncrease: 0.3

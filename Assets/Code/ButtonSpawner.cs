@@ -13,14 +13,15 @@ public class ButtonSpawner : MonoBehaviour
 
     [SerializeField] private BaseSprite spriteType;
 
-    [SerializeField] int spawnHealth = 1;
-    [SerializeField] int spawnDamage = 1;
+    [SerializeField] float spawnHealth = 1;
+    [SerializeField] float spawnDamage = 1;
 
     [SerializeField] float movementSpeed = 0.4f;
 
     [SerializeField] PlayerBase playerBase;
 
     [SerializeField] float DamageIncrease = 0.3f;
+    [SerializeField] float HealthIncrease = 0.3f;
 
     string inputKey;
     private void Start()
@@ -38,12 +39,14 @@ public class ButtonSpawner : MonoBehaviour
     {
         if (playerBase.sunResource >= resourceCost)
         {
+            spawnDamage += DamageIncrease;
+            spawnHealth += HealthIncrease;
             GetComponent<ButtonController>().PlayButtonSound();
             playerBase.sunResource -= resourceCost;
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNum + ")");
             BaseSprite instance = Instantiate(spriteType, firstNode.transform.position, Quaternion.identity);
 
-            instance.setVariables(spawnHealth, spawnDamage+DamageIncrease, movementSpeed, spawnNodeNum, firstNode, endNodeNum);
+            instance.setVariables(spawnHealth, spawnDamage, movementSpeed, spawnNodeNum, firstNode, endNodeNum);
         }
     }
 }
