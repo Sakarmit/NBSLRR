@@ -20,6 +20,8 @@ public class ButtonSpawner : MonoBehaviour
 
     [SerializeField] PlayerBase playerBase;
 
+    [SerializeField] float DamageIncrease = 0.3f;
+
     string inputKey;
     private void Start()
     {
@@ -41,7 +43,7 @@ public class ButtonSpawner : MonoBehaviour
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNum + ")");
             BaseSprite instance = Instantiate(spriteType, firstNode.transform.position, Quaternion.identity);
 
-            instance.setVariables(spawnHealth, spawnDamage, movementSpeed, spawnNodeNum, firstNode, endNodeNum);
+            instance.setVariables(spawnHealth, spawnDamage+DamageIncrease, movementSpeed, spawnNodeNum, firstNode, endNodeNum);
         }
     }
 }

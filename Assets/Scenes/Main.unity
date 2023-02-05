@@ -336,7 +336,8 @@ MonoBehaviour:
   startSpeed: 0.2
   movementSpeed: 0.5
   maxEnemyCount: 20
-  spawnSpeed: 100
+  spawnSpeed: 0
+  HealthIncreaseRate: 0.00005
 --- !u!212 &202205287
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1417,9 +1418,10 @@ MonoBehaviour:
   endNodeNum: 2
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 1
+  spawnDamage: 2
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
+  DamageIncrease: 0.3
 --- !u!212 &634964833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3120,9 +3122,10 @@ MonoBehaviour:
   endNodeNum: 22
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 1
+  spawnDamage: 2
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
+  DamageIncrease: 0.3
 --- !u!212 &1152335223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3761,9 +3764,10 @@ MonoBehaviour:
   endNodeNum: 42
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 1
+  spawnDamage: 2
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
+  DamageIncrease: 0.3
 --- !u!212 &1316220940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4250,9 +4254,10 @@ MonoBehaviour:
   endNodeNum: 12
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 1
+  spawnDamage: 2
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
+  DamageIncrease: 0.3
 --- !u!212 &1731107536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5507,9 +5512,10 @@ MonoBehaviour:
   endNodeNum: 33
   spriteType: {fileID: 8316842774716707814, guid: 7b15f7189e10a9e4db8967aed40cf0d1, type: 3}
   spawnHealth: 2
-  spawnDamage: 1
+  spawnDamage: 2
   movementSpeed: 0.5
   playerBase: {fileID: 1254746662}
+  DamageIncrease: 0.3
 --- !u!212 &2071830944
 SpriteRenderer:
   m_ObjectHideFlags: 0

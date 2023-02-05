@@ -16,7 +16,7 @@ public class GoodSprite : BaseSprite
         {
             if (currentNode == LastNode)
             {
-                enemyBase.enemyBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
+                enemyBase.enemyBaseHealth -= (int)(this.damage * Mathf.CeilToInt(this.health / this.damage));
                 Destroy(gameObject);
             }
             targetNode = GameObject.Find("PathNode (" + ++currentNode + ")");
@@ -28,8 +28,8 @@ public class GoodSprite : BaseSprite
         //If this collided with Enemy calculates which loses health and which dies
         if (collision.gameObject.tag.Equals("BadSprites"))
         {
-            int enemyHealth = collision.gameObject.GetComponent<BadSprite>().health;
-            int enemyDamage = collision.gameObject.GetComponent<BadSprite>().damage;
+            float enemyHealth = collision.gameObject.GetComponent<BadSprite>().health;
+            float enemyDamage = collision.gameObject.GetComponent<BadSprite>().damage;
 
             int turnsToKillThis = Mathf.CeilToInt(this.health / enemyDamage);
             int turnsToKillEnemy = Mathf.CeilToInt(enemyHealth / this.damage);

@@ -18,7 +18,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private GuiController GameUI;
 
     [SerializeField] int startEnemyHealth;
-    public int spawnHealth;
+    public float spawnHealth;
     [SerializeField] int startEnemyDamage;
     public int spawnDamage;
 
@@ -27,6 +27,8 @@ public class EnemyBase : MonoBehaviour
 
     [SerializeField] int maxEnemyCount = 14;
     [SerializeField] int spawnSpeed;
+    [SerializeField] float HealthIncreaseRate;
+
     int spawnCooldown = 0;
     private void Start()
     {
@@ -62,6 +64,7 @@ public class EnemyBase : MonoBehaviour
             spawnCooldown = Math.Clamp(spawnCooldown+1, 0, spawnSpeed+1);
         }
         enemyHealthDisplay.text = enemyBaseHealth.ToString("0000.#");
+        spawnHealth += HealthIncreaseRate;
     }
 
     public void SetDefaults()
