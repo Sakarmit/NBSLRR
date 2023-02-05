@@ -26,7 +26,8 @@ public class EnemyBase : MonoBehaviour
     public float movementSpeed;
 
     [SerializeField] int maxEnemyCount = 14;
-
+    [SerializeField] int spawnSpeed;
+    int spawnCooldown = 0;
     private void Start()
     {
         enemyBaseHealth = startingHealth;
@@ -46,7 +47,7 @@ public class EnemyBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameObject.FindGameObjectsWithTag("BadSprites").Length < maxEnemyCount)
+        if (spawnCooldown > spawnSpeed && GameObject.FindGameObjectsWithTag("BadSprites").Length < maxEnemyCount)
         {
             int randomPath = Random.Range(0, 4);
             GameObject firstNode = GameObject.Find("PathNode (" + spawnNodeNums[randomPath] + ")");
@@ -54,6 +55,11 @@ public class EnemyBase : MonoBehaviour
 
             instance.setVariables(spawnHealth, spawnDamage, movementSpeed, 
                 spawnNodeNums[randomPath], firstNode, endNodeNums[randomPath]);
+            spawnCooldown = 0;
+        } 
+        else
+        {
+            spawnCooldown = Math.Clamp(spawnCooldown+1, 0, spawnSpeed+1);
         }
         enemyHealthDisplay.text = enemyBaseHealth.ToString("0000.#");
     }
