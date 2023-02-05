@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BaseSprite : MonoBehaviour
 {
-    public int health;
-    public int damage;
+    public float health;
+    public float damage;
 
     protected float movementSpeed;
 
@@ -13,7 +13,7 @@ public class BaseSprite : MonoBehaviour
     protected GameObject targetNode;
     protected int LastNode = 0;
 
-    public void setVariables(int initHealth, int initDamage, float initMovSpeed, 
+    public void setVariables(float initHealth, float initDamage, float initMovSpeed, 
         int initCurrNode, GameObject initTargNode, int initLastNode)
     {
         health = initHealth;

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BadSprite : BaseSprite
@@ -17,7 +16,7 @@ public class BadSprite : BaseSprite
         {
             if (currentNode == LastNode)
             {
-                playerBase.playerBaseHealth -= this.damage * Mathf.CeilToInt(this.health / this.damage);
+                playerBase.playerBaseHealth -= (int)(this.damage * Mathf.CeilToInt(this.health / this.damage));
                 Destroy(gameObject);
             }
             targetNode = GameObject.Find("PathNode (" + --currentNode + ")");
