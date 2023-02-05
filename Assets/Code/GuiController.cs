@@ -40,6 +40,11 @@ public class GuiController : MonoBehaviour
                 EndScreen.transform.position = new Vector3(0, 0, 0);
             }
         }
+
+        if (!playerBase.activeSelf && MainCamera.transform.position.y == 0)
+        {
+            enableGame();
+        }
     }
 
     public void PanCameraDown()
